@@ -1,5 +1,5 @@
 import { JwtPayload, sign, verify } from "jsonwebtoken";
-import { AuthenticationData } from "../types/AuthenticationData"
+import { AuthenticationData } from "./types/AuthenticationData"
 import dotenv from "dotenv";
 import { CustomError } from "./CustomError";
 
@@ -10,8 +10,10 @@ export class Authenticator {
         try {
             const token = sign(payload, process.env.JWT_SECRET as string, { expiresIn: process.env.JWT_EXPIRES_IN });
             return token;
-        } catch (err: any) {
-            throw new CustomError(401, err.message);
+        } catch (err) {
+            if (err instanceof CustomError) {
+                throw new CustomError(401, err.message);
+            }
         }
     }
 
@@ -28,8 +30,10 @@ export class Authenticator {
         try {
             const token = sign(payload, process.env.JWT_SECRET as string, { expiresIn: process.env.JWT_EXPIRES_EMAIL });
             return token;
-        } catch (err: any) {
-            throw new CustomError(401, err.message);
+        } catch (err) {
+            if (err instanceof CustomError) {
+                throw new CustomError(401, err.message);
+            }
         }
     }
 
@@ -37,8 +41,10 @@ export class Authenticator {
         try {
             const tokenData = verify(token, process.env.JWT_SECRET as string) as JwtPayload;
             return { email: tokenData.email };
-        } catch (err: any) {
-            throw new CustomError(401, err.message);
+        } catch (err) {
+            if (err instanceof CustomError) {
+                throw new CustomError(401, err.message);
+            }
         }
     }
 }

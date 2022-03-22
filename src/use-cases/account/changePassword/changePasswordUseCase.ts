@@ -17,12 +17,14 @@ export class ChangePasswordUseCase {
 
         const userInfo = Authenticator.getTokenEmail(data.token);
 
-        const userAlreadyExists = await this.IUserRepository.find("email", userInfo.email);
-        if (!userAlreadyExists.length) {
-            throw new CustomError(409, "E-mail inexistente.");
-        }
+        if (userInfo) {
+            const userAlreadyExists = await this.IUserRepository.find("email", userInfo.email);
+            if (!userAlreadyExists.length) {
+                throw new CustomError(409, "E-mail inexistente.");
+            }
 
-        const newPassword = await HashManager.create(data.password);
-        await this.IUserRepository.update("email", userInfo.email, "password", newPassword);
+            const newPassword = await HashManager.create(data.password);
+            await this.IUserRepository.update("email", userInfo.email, "password", newPassword);
+        }
     }
 }
