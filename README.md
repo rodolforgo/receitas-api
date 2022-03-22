@@ -14,4 +14,4 @@
 - Instale os pacotes necessários com o ``` npm install ```;
 - Configure o seu banco de dados no arquivo ``` .env ```;
 - Utilize o ``` npm run migrations ``` para criar as tabelas no seu banco de dados;
-- Suba o servidor para testes com o ``` npm run dev ``
+- Suba o servidor para testes com o ``` npm run dev ```
