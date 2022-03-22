@@ -6,6 +6,3 @@ import { recipeRouter } from "./routes/recipeRouter";
 app.use("/", accountRouter);
 app.use("/user", userRouter);
 app.use("/recipe", recipeRouter);
-
-
-
