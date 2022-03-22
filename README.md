@@ -5,7 +5,7 @@
 - API desenvolvida em Node.js/Express e integrada ao banco de dados MySQL.
 - Funcionalidades: gestão de usuário (cadastro e descadastro de contas, login, recuperação de senha (via e-mail), alteração de senha, controle de níveis de acesso); sistema de seguidores (follow e unfollow); feed de receitas; cadastro, remoção e edição de receitas.
 - Bibliotecas utilizadas: Knewjs, JWT, bcryptjs, UUID, NodeMailer, Vailidator.
-- Projeto de fixação desenvolvido nos estudos de backend no curso curso da Labenu_.
+- Projeto de fixação desenvolvido durante estudos de Node.js.
 
 ### Documentação
 
