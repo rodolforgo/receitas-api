@@ -2,7 +2,7 @@ import { IRecipeRepository } from "../../../repositories/IRecipeRepository";
 import { Authenticator } from "../../../services/Authenticator";
 import { CustomError } from "../../../services/CustomError";
 import { IEditRecipeDTO } from "./editRecipeDTO";
-import { Recipe } from "./../../../entitities/Recipe";
+import { Recipe } from "../../../entitities/Recipe";
 
 export class EditRecipeUseCase {
     constructor(private IRecipeRepository: IRecipeRepository) { }
