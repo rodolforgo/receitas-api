@@ -1,4 +1,4 @@
-### API Receitas
+### Receitas API
 
 API desenvolvida em Node.js/Express e integrada ao banco de dados MySQL.
 
